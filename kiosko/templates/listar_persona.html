@@ -1,0 +1,24 @@
+{% extends 'index.html'  %}
+{% block titulo %}Lista de Articulos{% endblock titulo %}
+{% block cuerpo %}
+<table border="2">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tipo de Persona</th>
+            <th>Legajo</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+{% for personas in personas %}
+    <tbody>
+        <tr>
+            <th>{{ personas.id_datos_personales }}</th>
+            <th>{{ personas.id_tpo_persona }}</th>
+            <th>{{ personas.id_legajo_empl }}</th>
+            <th><a href="{% url 'editar_persona' personas.id_persona %}">EDITAR</a>/<a href="{% url 'eliminar_persona' personas.id_persona %}">ELIMINAR</a></th>
+        </tr>
+    </tbody>
+{% endfor %}
+</table>
+{% endblock cuerpo %}

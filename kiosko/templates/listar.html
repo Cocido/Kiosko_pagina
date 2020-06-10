@@ -1,0 +1,26 @@
+{% extends 'index.html'  %}
+{% block titulo %}Lista de Articulos{% endblock titulo %}
+{% block cuerpo %}
+<table border="2">
+    <thead>
+        <tr>
+            <th>Nombre Articulo</th>
+            <th>Precio</th>
+            <th>Rubro</th>
+            <th>Cantidad Disponible</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+{% for articulos in articulos %}
+    <tbody>
+        <tr>
+            <th>{{ articulos.nombre_art }}</th>
+            <th>{{ articulos.precio_a }}</th>
+            <th>{{ articulos.id_rubro }}</th>
+            <th>{{ articulos.cant_a }}</th>
+            <th><a href="{% url 'editar' articulos.id_art %}">EDITAR</a>/<a href="{% url 'eliminar' articulos.id_art %}">ELIMINAR</a></th>
+        </tr>
+    </tbody>
+{% endfor %}
+</table>
+{% endblock cuerpo %}
