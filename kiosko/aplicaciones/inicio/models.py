@@ -89,4 +89,7 @@ class venta(models.Model):
     id_detalle_venta = models.ForeignKey(detalle_venta, on_delete = models.CASCADE)
     id_persona = models.ForeignKey(persona, on_delete = models.CASCADE)
 
+class asd(models.Model):
+    id_asd = models.AutoField(primary_key = True, null = False)
+
 
